@@ -1,0 +1,9 @@
+{
+	"sessionId": "dev",
+	"user": {
+		"id": "007",
+		"name": "James Sailor",
+		"role": "user",
+		"ip": " 007.007.007.007"
+	}
+}

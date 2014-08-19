@@ -1,0 +1,205 @@
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="btn-group btn-group-justified" data-toggle="buttons">
+				<label class="btn btn-default" ng-class="{active: listInfo.sel == 'my'}" ng-click="listInfo.sel = 'my'">
+					<input type="radio" ng-model="listInfo.sel" value="my">  Meine <br/>
+				</label>
+				<label class="btn btn-default" ng-class="{active: listInfo.sel == 'all'}" ng-click="listInfo.sel = 'all'">
+					<input type="radio" ng-model="listInfo.sel" value="all">  Alle <br/>
+				</label>
+				<label class="btn btn-default" ng-class="{active: listInfo.sel == 'search'}" ng-click="listInfo.sel = 'search'">
+					<input type="radio" ng-model="listInfo.sel" value="search">  Suche <br/>
+				</label>
+			</div>
+		</div>
+	</div>
+
+	<!-- MY SHIPS -->
+  <div ng-if="listInfo.sel == 'my'">
+
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="list-title">
+          Boot / See / Hafen
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="list-frame my">
+
+        <div class="list-body">
+          <div class="col-xs-12">
+            <div class="list-head">
+              <button ng-if="isLookup" type="button" class="btn btn-default btn-xs" ng-click="selMine()"><span class="glyphicon glyphicon-{{selIcon(SHIP_SEL.mine)}}"/></button>
+              <b>Alle</b>
+            </div>
+            <div>
+              <table class="table table-striped table-hover table-condensed">
+                <tbody>
+                <tr ng-repeat="ship in ships.getMyShips()">
+                  <td ng-if="isLookup"><button type="button" class="btn btn-default btn-xs" ng-click="selShip(ship.id)"><span class="glyphicon glyphicon-{{selIcon(SHIP_SEL.ship, ship.id)}}"/></button></td>
+                  <td><b>{{ship.name}}</b><br>{{ship.lakeName}}<br>{{ship.harborName}}</td>
+                  <td><img ng-if="ship.hasImg" ng-click="showShip(ship)" ng-src="http://www.sailcomnet.ch/fotos/thumbs/{{ship.id}}.jpg" width="95"/></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <script type='text/javascript' charset='utf-8'>
+
+          // Resize list-frame height
+          $(window).resize(function() {
+            var listHeight = $(window).height() - 215;
+            $('.list-frame').css({ "max-height": listHeight + 'px' });
+          });
+          $(window).trigger('resize');
+
+        </script>
+
+      </div>
+    </div>
+
+  </div>
+
+	<!-- ALL SHIPS (BY LAKE, HARBOR) -->
+  <div ng-if="listInfo.sel == 'all'">
+
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="list-title">
+          See / Hafen / Boot
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row" id="allShips">
+      <div class="list-frame all">
+
+        <div class="list-body">
+          <div class="col-xs-12">
+            <div ng-repeat="lake in ships.getAllLakes()">
+              <div class="list-head collapsed" data-toggle="collapse" data-parent="#allShips" data-target="#lake{{lake.id}}">
+                <button ng-if="isLookup" type="button" class="btn btn-default btn-xs btn-sel" ng-click="selLake(lake.id, $event)"><span class="glyphicon glyphicon-{{selIcon(SHIP_SEL.lake, lake.id)}}"/></button>
+                <span class="lake-name">{{lake.name}}</span>
+                <span class="ship-count badge">{{lake.ships.length}}</span>
+              </div>
+              <div id="lake{{lake.id}}" class="collapse">
+                <table class="table table-condensed">
+                  <tbody ng-repeat="item in list.getItemList(lake.id)">
+                    <tr ng-if="item.kind === 'harbor'" class="harbor">
+                      <td ng-if="isLookup"><button type="button" class="btn btn-default btn-xs btn-sel {{item.kind}}" ng-click="selHarbor(item.harbor.id)"><span class="glyphicon glyphicon-{{selIcon(SHIP_SEL.harbor, item.harbor.id)}}"/></button></td>
+                      <td colspan="2">
+                        <span class="item-name">{{item.harbor.name}}</span>
+                      </td>
+                    </tr>
+                    <tr ng-if="item.kind === 'ship'" class="ship">
+                      <td ng-if="isLookup"><button type="button" class="btn btn-default btn-xs btn-sel {{item.kind}}" ng-click="selShip(item.ship.id)"><span class="glyphicon glyphicon-{{selIcon(SHIP_SEL.ship, item.ship.id)}}"/></button></td>
+                      <td>
+                        <span class="item-name">{{item.ship.name}}</span>
+                        <span class="item-descn"><br>{{item.ship.lakeName}}</span>
+                        <span class="item-descn"><br>{{item.ship.harborName}}</span>
+                      </td>
+                      <td><img ng-if="item.ship.hasImg" ng-src="http://www.sailcomnet.ch/fotos/thumbs/{{item.ship.id}}.jpg" width="95"/></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script type='text/javascript' charset='utf-8'>
+
+          // Resize list-frame height
+          $(window).resize(function() {
+            var listHeight = $(window).height() - 215;
+            $('.list-frame').css({ "max-height": listHeight + 'px' });
+          });
+          $(window).trigger('resize');
+
+        </script>
+
+      </div>
+    </div>
+
+  </div>
+
+	<!-- SHIP SEARCH -->
+  <div ng-if="listInfo.sel == 'search'">
+
+    <div class="row">
+      <div class="col-xs-12">
+
+        <p/>
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="searchText" class="col-xs-3 control-label">Suche</label>
+            <div class="col-xs-9">
+              <input type="text" ng-model="listInfo.searchText" class="form-control" id="searchText" placeholder="Suchbegriff">
+            </div>
+          </div>
+        </form>
+
+        <div class="list-title">
+          Boot / See / Hafen
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="list-frame search">
+
+        <div class="list-body">
+          <div class="col-xs-12">
+            <div>
+              <table class="table table-striped table-hover table-condensed">
+                <tbody>
+                <tr ng-repeat="ship in ships.getAllShips() | filter:listInfo.searchText" ng-class="{success: ship.isMine}">
+                  <td ng-if="isLookup"><button type="button" class="btn btn-default btn-xs" ng-click="selShip(ship.id)"><span class="glyphicon glyphicon-{{selIcon(SHIP_SEL.ship, ship.id)}}"/></button></td>
+                  <td><b>{{ship.name}}</b><br>{{ship.lakeName}}<br>{{ship.harborName}}</td>
+                  <td><img ng-if="ship.hasImg" ng-click="showShip(ship)" ng-src="http://www.sailcomnet.ch/fotos/thumbs/{{ship.id}}.jpg" width="95"/></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <script type='text/javascript' charset='utf-8'>
+
+          // Resize list-frame height
+          $(window).resize(function() {
+            var listHeight = $(window).height() - 252;
+            $('.list-frame').css({ "max-height": listHeight + 'px' });
+          });
+          $(window).trigger('resize');
+
+        </script>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container footer">
+    <div class="navbar-footer navbar-dialog navbar-right">
+      <button type="button" class="btn btn-default" ng-click="doCancel()">Cancel</button>
+      <button type="button" class="btn btn-primary" ng-click="doOK()">OK</button>
+    </div>
+  </div>
+
+</div>
+
+

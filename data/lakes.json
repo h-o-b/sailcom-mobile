@@ -1,0 +1,92 @@
+[
+	{
+		"id": 1,
+		"name": "Ägerisee",
+		"isMine": false
+	},
+	{
+		"id": 2,
+		"name": "Bielersee",
+		"isMine": true
+	},
+	{
+		"id": 3,
+		"name": "Bodensee",
+		"isMine": false
+	},
+	{
+		"id": 4,
+		"name": "Genfersee",
+		"isMine": false
+	},
+	{
+		"id": 5,
+		"name": "Greifensee",
+		"isMine": false
+	},
+	{
+		"id": 6,
+		"name": "Hallwilersee",
+		"isMine": false
+	},
+	{
+		"id": 7,
+		"name": "Lago di Lugano",
+		"isMine": false
+	},
+	{
+		"id": 8,
+		"name": "Lago Maggiore",
+		"isMine": false
+	},
+	{
+		"id": 9,
+		"name": "Lungernsee",
+		"isMine": false
+	},
+	{
+		"id": 10,
+		"name": "Murtensee",
+		"isMine": false
+	},
+	{
+		"id": 11,
+		"name": "Neuenburgersee",
+		"isMine": false
+	},
+	{
+		"id": 12,
+		"name": "Sihlsee",
+		"isMine": false
+	},
+	{
+		"id": 13,
+		"name": "Thunersee",
+		"isMine": false
+	},
+	{
+		"id": 14,
+		"name": "Vierwaldstättersee",
+		"isMine": true
+	},
+	{
+		"id": 15,
+		"name": "Walensee",
+		"isMine": false
+	},
+	{
+		"id": 16,
+		"name": "Zugersee",
+		"isMine": false
+	},
+	{
+		"id": 17,
+		"name": "Zürich-Obersee",
+		"isMine": false
+	},
+	{
+		"id": 18,
+		"name": "Zürichsee",
+		"isMine": false
+	}
+]

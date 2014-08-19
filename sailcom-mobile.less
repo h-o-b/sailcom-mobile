@@ -1,0 +1,134 @@
+
+@navbar-bg-color: #184878; //#2c5dab;
+@body-bg-color: #fcfbf7; //#e1e3f2;
+
+/* No Text Select Mixin */
+.no-text-select {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+body {
+  background-color: @body-bg-color;
+  padding-top: 70px;
+  overflow-x: hidden;
+  .no-text-select;
+}
+
+
+/* Navigation */
+.navbar-default {
+  background-color: @navbar-bg-color;
+}
+
+.navbar-brand.icon {
+  padding-left: 5px;
+  padding-top: 2px;
+}
+
+.navbar-brand.text {
+  color: #bbb;
+}
+
+.navbar-dialog {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.navbar-dialog.navbar-right {
+  float: right!important;
+}
+.navbar-brand.text.active {
+  color: #eee;
+  text-shadow: 0 0 4px rgba(255,255,255,0.3);
+}
+
+
+/* Spinner */
+.horizontal-center {
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+
+  /* W3C */
+  display: box;
+  box-pack: center;
+}
+
+
+.navbar-spinner-frame {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.navbar-spinner {
+  position: absolute;
+  top: 150px;
+  left: 45%;
+}
+
+/* Dialog Footer */
+.container.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: @navbar-bg-color;
+}
+
+
+/* View Animations */
+.slide.ng-enter, .slide.ng-leave {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+}
+
+.slide-to-left .slide.ng-enter {
+  left: 100%;
+}
+
+.slide-to-left .slide.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.slide-to-left .slide.ng-leave.ng-leave-active {
+  left: -100%;
+}
+
+.slide-to-right .slide.ng-enter {
+  left: -100%;
+}
+
+.slide-to-right .slide.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.slide-to-right .slide.ng-leave.ng-leave-active {
+  left: 100%;
+}
+

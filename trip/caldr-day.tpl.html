@@ -1,0 +1,24 @@
+
+<div class="cdr dh">
+	<span style="float: center;">
+		<button type="button" ng-click="selDate(day.tripDate);" class="btn dh" ng-class="{ 'btn-success' : day.isToday, 'btn-primary' : day.isWeekend && !day.isToday, 'btn-default' : !day.isToday && !day.isWeekend }">
+			{{day.tripDate | date : 'EEE d. MMMM'}}
+		</button>
+	</span>
+</div>
+
+<div class="cdr th">
+	<div class="thl">9</div></th>
+	<div class="thp">&nbsp;</div></th>
+	<div class="thm">12</div></th>
+	<div class="thp">&nbsp;</div></th>
+	<div class="thm">15</div></th>
+	<div class="thp">&nbsp;</div></th>
+	<div class="thm">18</div></th>
+	<div class="thp">&nbsp;</div></th>
+	<div class="thr">21</div></th>
+</div>
+
+<div caldr-trip class="cdr sh" ship="item" day="day" ng-repeat="item in getShipList()">
+</div>
+

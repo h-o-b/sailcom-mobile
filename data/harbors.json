@@ -1,0 +1,272 @@
+[
+	{
+		"id": 46,
+		"name": "Oberägeri",
+		"isMine": false,
+		"lakeId": 1
+	},
+	{
+		"id": 13,
+		"name": "Biel",
+		"isMine": true,
+		"lakeId": 2
+	},
+	{
+		"id": 52,
+		"name": "Biel-Vingelz",
+		"isMine": true,
+		"lakeId": 2
+	},
+	{
+		"id": 14,
+		"name": "La Neuveville",
+		"isMine": false,
+		"lakeId": 2
+	},
+	{
+		"id": 1,
+		"name": "Altenrhein",
+		"isMine": false,
+		"lakeId": 3
+	},
+	{
+		"id": 2,
+		"name": "Arbon",
+		"isMine": false,
+		"lakeId": 3
+	},
+	{
+		"id": 3,
+		"name": "Goldach",
+		"isMine": false,
+		"lakeId": 3
+	},
+	{
+		"id": 51,
+		"name": "Kreuzlingen",
+		"isMine": false,
+		"lakeId": 3
+	},
+	{
+		"id": 4,
+		"name": "Romanshorn",
+		"isMine": false,
+		"lakeId": 3
+	},
+	{
+		"id": 5,
+		"name": "Steckborn",
+		"isMine": false,
+		"lakeId": 3
+	},
+	{
+		"id": 60,
+		"name": "Genf - Eaux-Vives",
+		"isMine": false,
+		"lakeId": 4
+	},
+	{
+		"id": 21,
+		"name": "Versoix GE",
+		"isMine": false,
+		"lakeId": 4
+	},
+	{
+		"id": 22,
+		"name": "Vevey",
+		"isMine": false,
+		"lakeId": 4
+	},
+	{
+		"id": 8,
+		"name": "Fällanden",
+		"isMine": false,
+		"lakeId": 5
+	},
+	{
+		"id": 62,
+		"name": "Beinwil",
+		"isMine": false,
+		"lakeId": 6
+	},
+	{
+		"id": 57,
+		"name": "Circolo velico Lugano",
+		"isMine": false,
+		"lakeId": 7
+	},
+	{
+		"id": 32,
+		"name": "Ronco TI",
+		"isMine": false,
+		"lakeId": 8
+	},
+	{
+		"id": 54,
+		"name": "Lungern",
+		"isMine": false,
+		"lakeId": 9
+	},
+	{
+		"id": 47,
+		"name": "Vallamand",
+		"isMine": false,
+		"lakeId": 10
+	},
+	{
+		"id": 15,
+		"name": "Chevroux VD",
+		"isMine": false,
+		"lakeId": 11
+	},
+	{
+		"id": 37,
+		"name": "Estavayer-le-lac",
+		"isMine": false,
+		"lakeId": 11
+	},
+	{
+		"id": 18,
+		"name": "Neuenburg",
+		"isMine": false,
+		"lakeId": 11
+	},
+	{
+		"id": 9,
+		"name": "Gross SZ",
+		"isMine": false,
+		"lakeId": 12
+	},
+	{
+		"id": 24,
+		"name": "Güetital-Faulensee",
+		"isMine": false,
+		"lakeId": 13
+	},
+	{
+		"id": 26,
+		"name": "Hilterfingen-Hünibach",
+		"isMine": false,
+		"lakeId": 13
+	},
+	{
+		"id": 63,
+		"name": "Spiez",
+		"isMine": false,
+		"lakeId": 13
+	},
+	{
+		"id": 55,
+		"name": "Thun - Lachenkanal",
+		"isMine": false,
+		"lakeId": 13
+	},
+	{
+		"id": 25,
+		"name": "Thun-Gwatt",
+		"isMine": false,
+		"lakeId": 13
+	},
+	{
+		"id": 50,
+		"name": "Brunnen - Föhnhafen",
+		"isMine": true,
+		"lakeId": 14
+	},
+	{
+		"id": 27,
+		"name": "Gersau",
+		"isMine": false,
+		"lakeId": 14
+	},
+	{
+		"id": 28,
+		"name": "Küssnacht",
+		"isMine": false,
+		"lakeId": 14
+	},
+	{
+		"id": 29,
+		"name": "Luzern",
+		"isMine": false,
+		"lakeId": 14
+	},
+	{
+		"id": 6,
+		"name": "Mühlehorn GL",
+		"isMine": false,
+		"lakeId": 15
+	},
+	{
+		"id": 7,
+		"name": "Unterterzen SG",
+		"isMine": false,
+		"lakeId": 15
+	},
+	{
+		"id": 44,
+		"name": "Arth",
+		"isMine": false,
+		"lakeId": 16
+	},
+	{
+		"id": 31,
+		"name": "Zug",
+		"isMine": false,
+		"lakeId": 16
+	},
+	{
+		"id": 10,
+		"name": "Jona SG",
+		"isMine": false,
+		"lakeId": 17
+	},
+	{
+		"id": 11,
+		"name": "Schmerikon",
+		"isMine": false,
+		"lakeId": 17
+	},
+	{
+		"id": 35,
+		"name": "Schmerikon - Gem.hafen",
+		"isMine": false,
+		"lakeId": 17
+	},
+	{
+		"id": 36,
+		"name": "Erlenbach",
+		"isMine": false,
+		"lakeId": 18
+	},
+	{
+		"id": 61,
+		"name": "Herrliberg",
+		"isMine": false,
+		"lakeId": 18
+	},
+	{
+		"id": 53,
+		"name": "Horgen",
+		"isMine": false,
+		"lakeId": 18
+	},
+	{
+		"id": 58,
+		"name": "Pfäffikon SZ",
+		"isMine": false,
+		"lakeId": 18
+	},
+	{
+		"id": 34,
+		"name": "Wädenswil",
+		"isMine": false,
+		"lakeId": 18
+	},
+	{
+		"id": 12,
+		"name": "Zürich",
+		"isMine": false,
+		"lakeId": 18
+	}
+]

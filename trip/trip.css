@@ -1,0 +1,528 @@
+/* Colors */
+/* Dimensions */
+/* Dimensions */
+.vertical-center {
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-align: center;
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-align: center;
+  /* W3C */
+  display: box;
+  box-align: center;
+}
+.horizontal-center {
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  /* W3C */
+  display: box;
+  box-pack: center;
+}
+/* Buttons */
+.tripDetail button.ctrl {
+  font-size: 17px;
+  padding: 6px 10px;
+  padding-bottom: 2px;
+}
+.tripDetail div.btn-group-time {
+  padding-right: 6px;
+}
+.tripDetail div.btn-group-dur {
+  padding-left: 6px;
+}
+.tripDetail button.btn-shortcut {
+  padding: 6px 0px;
+}
+/* Calendar Frame */
+div.caldr-frame {
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 4px 4px 8px;
+  overflow: hidden;
+}
+/* Calendar Day */
+div.caldr-day {
+  position: relative;
+  float: left;
+  background-color: transparent;
+  margin-left: 8px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-right: 8px;
+  /* Active Date */
+}
+div.caldr-day.active {
+  background-color: #f7f8fa;
+}
+/* Calendar Day Row */
+div.cdr {
+  position: relative;
+  font-size: 12px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+/* Date Header */
+div.dh {
+  height: 34px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+div.dh button.dh {
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+/* Time Header */
+div.th {
+  height: 19px;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  background-color: transparent;
+  border-top: 1px solid #2c5dab;
+  border-bottom: 1px solid #2c5dab;
+}
+div.th .thl,
+div.th .thm,
+div.th .thr {
+  position: relative;
+  float: left;
+  width: 36px;
+}
+div.th .thp {
+  position: relative;
+  float: left;
+  width: 18px;
+}
+/* Ship */
+div.sh div.bg {
+  position: relative;
+  height: 60px;
+  border-bottom: 1px solid #2c5dab;
+}
+div.sh div.bg .bgl {
+  position: relative;
+  float: left;
+  height: 60px;
+  width: 18px;
+}
+div.sh div.bg .bgm {
+  position: relative;
+  float: left;
+  height: 60px;
+  width: 54px;
+  border-left: 1px solid #bbcceb;
+}
+div.sh div.bg .bgr {
+  position: relative;
+  float: left;
+  height: 60px;
+  width: 18px;
+  border-left: 1px solid #bbcceb;
+}
+div.sn {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding-top: 2px;
+  padding-left: 2px;
+  height: 30px;
+  width: 252px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: rgba(238, 236, 216, 0.7);
+}
+div.sn img.sn {
+  padding: 0px 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+div.sn button.sn {
+  padding-left: 6px;
+  padding-top: 2px;
+  padding-right: 6px;
+  padding-bottom: 0px;
+  font-size: 16px;
+}
+div.sn .ship {
+  padding-left: 2px;
+  font-weight: bold;
+}
+div.tp {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 30px;
+  height: 30px;
+}
+div.tp .tp {
+  position: absolute;
+  top: 6px;
+  height: 18px;
+}
+div.tp .tpc {
+  position: absolute;
+  top: 4px;
+  height: 22px;
+}
+div.tp span.btl {
+  font-size: 11px;
+  height: 100%;
+  padding-left: 2px;
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-align: center;
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-align: center;
+  /* W3C */
+  display: box;
+  box-align: center;
+}
+div.tp span.btr {
+  font-size: 11px;
+  height: 100%;
+  padding-right: 2px;
+  float: right;
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-align: center;
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-align: center;
+  /* W3C */
+  display: box;
+  box-align: center;
+}
+div.tp .tpo {
+  background-color: rgba(232, 142, 59, 0.7);
+  border: 1px solid #a95b14;
+}
+div.tp .tpm {
+  background-color: rgba(79, 165, 236, 0.7);
+  border: 1px solid #1573c0;
+}
+div.tp .tpn {
+  background-color: rgba(87, 183, 92, 0.5);
+  border: 1px solid #327636;
+}
+div.tp .tpx {
+  background-color: rgba(231, 0, 0, 0.5);
+  border: 1px solid #810000;
+}
+div.tp .tps {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+div.tp .tpe {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+div.tp .tpf0 {
+  left: 0px;
+}
+div.tp .tpf1 {
+  left: 0px;
+}
+div.tp .tpf2 {
+  left: 0px;
+}
+div.tp .tpf3 {
+  left: 0px;
+}
+div.tp .tpf4 {
+  left: 0px;
+}
+div.tp .tpf5 {
+  left: 0px;
+}
+div.tp .tpf6 {
+  left: 0px;
+}
+div.tp .tpf7 {
+  left: 0px;
+}
+div.tp .tpf8 {
+  left: 0px;
+}
+div.tp .tpf9 {
+  left: 0px;
+}
+div.tp .tpf10 {
+  left: 0px;
+}
+div.tp .tpf11 {
+  left: 0px;
+}
+div.tp .tpf12 {
+  left: 0px;
+}
+div.tp .tpf13 {
+  left: 0px;
+}
+div.tp .tpf14 {
+  left: 0px;
+}
+div.tp .tpf15 {
+  left: 0px;
+}
+div.tp .tpf16 {
+  left: 0px;
+}
+div.tp .tpf17 {
+  left: 0px;
+}
+div.tp .tpf18 {
+  left: 0px;
+}
+div.tp .tpf19 {
+  left: 9px;
+}
+div.tp .tpf20 {
+  left: 18px;
+}
+div.tp .tpf21 {
+  left: 27px;
+}
+div.tp .tpf22 {
+  left: 36px;
+}
+div.tp .tpf23 {
+  left: 45px;
+}
+div.tp .tpf24 {
+  left: 54px;
+}
+div.tp .tpf25 {
+  left: 63px;
+}
+div.tp .tpf26 {
+  left: 72px;
+}
+div.tp .tpf27 {
+  left: 81px;
+}
+div.tp .tpf28 {
+  left: 90px;
+}
+div.tp .tpf29 {
+  left: 99px;
+}
+div.tp .tpf30 {
+  left: 108px;
+}
+div.tp .tpf31 {
+  left: 117px;
+}
+div.tp .tpf32 {
+  left: 126px;
+}
+div.tp .tpf33 {
+  left: 135px;
+}
+div.tp .tpf34 {
+  left: 144px;
+}
+div.tp .tpf35 {
+  left: 153px;
+}
+div.tp .tpf36 {
+  left: 162px;
+}
+div.tp .tpf37 {
+  left: 171px;
+}
+div.tp .tpf38 {
+  left: 180px;
+}
+div.tp .tpf39 {
+  left: 189px;
+}
+div.tp .tpf40 {
+  left: 198px;
+}
+div.tp .tpf41 {
+  left: 207px;
+}
+div.tp .tpf42 {
+  left: 216px;
+}
+div.tp .tpf43 {
+  left: 216px;
+}
+div.tp .tpf44 {
+  left: 216px;
+}
+div.tp .tpf45 {
+  left: 216px;
+}
+div.tp .tpf46 {
+  left: 216px;
+}
+div.tp .tpf47 {
+  left: 216px;
+}
+div.tp .tpt1 {
+  right: 216px;
+}
+div.tp .tpt2 {
+  right: 216px;
+}
+div.tp .tpt3 {
+  right: 216px;
+}
+div.tp .tpt4 {
+  right: 216px;
+}
+div.tp .tpt5 {
+  right: 216px;
+}
+div.tp .tpt6 {
+  right: 216px;
+}
+div.tp .tpt7 {
+  right: 216px;
+}
+div.tp .tpt8 {
+  right: 216px;
+}
+div.tp .tpt9 {
+  right: 216px;
+}
+div.tp .tpt10 {
+  right: 216px;
+}
+div.tp .tpt11 {
+  right: 216px;
+}
+div.tp .tpt12 {
+  right: 216px;
+}
+div.tp .tpt13 {
+  right: 216px;
+}
+div.tp .tpt14 {
+  right: 216px;
+}
+div.tp .tpt15 {
+  right: 216px;
+}
+div.tp .tpt16 {
+  right: 216px;
+}
+div.tp .tpt17 {
+  right: 216px;
+}
+div.tp .tpt18 {
+  right: 216px;
+}
+div.tp .tpt19 {
+  right: 207px;
+}
+div.tp .tpt20 {
+  right: 198px;
+}
+div.tp .tpt21 {
+  right: 189px;
+}
+div.tp .tpt22 {
+  right: 180px;
+}
+div.tp .tpt23 {
+  right: 171px;
+}
+div.tp .tpt24 {
+  right: 162px;
+}
+div.tp .tpt25 {
+  right: 153px;
+}
+div.tp .tpt26 {
+  right: 144px;
+}
+div.tp .tpt27 {
+  right: 135px;
+}
+div.tp .tpt28 {
+  right: 126px;
+}
+div.tp .tpt29 {
+  right: 117px;
+}
+div.tp .tpt30 {
+  right: 108px;
+}
+div.tp .tpt31 {
+  right: 99px;
+}
+div.tp .tpt32 {
+  right: 90px;
+}
+div.tp .tpt33 {
+  right: 81px;
+}
+div.tp .tpt34 {
+  right: 72px;
+}
+div.tp .tpt35 {
+  right: 63px;
+}
+div.tp .tpt36 {
+  right: 54px;
+}
+div.tp .tpt37 {
+  right: 45px;
+}
+div.tp .tpt38 {
+  right: 36px;
+}
+div.tp .tpt39 {
+  right: 27px;
+}
+div.tp .tpt40 {
+  right: 18px;
+}
+div.tp .tpt41 {
+  right: 9px;
+}
+div.tp .tpt42 {
+  right: 0px;
+}
+div.tp .tpt43 {
+  right: 0px;
+}
+div.tp .tpt44 {
+  right: 0px;
+}
+div.tp .tpt45 {
+  right: 0px;
+}
+div.tp .tpt46 {
+  right: 0px;
+}
+div.tp .tpt47 {
+  right: 0px;
+}
+div.tp .tpt48 {
+  right: 0px;
+}

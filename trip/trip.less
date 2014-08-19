@@ -1,0 +1,616 @@
+
+/* Colors */
+@caldr-frame-border-color: lightgrey;
+
+@caldr-bg-color: transparent;
+@caldr-curr-bg-color: #f7f8fa;
+
+@head-bg-color: transparent;
+@head-border-color: #2c5dab;
+@time-border-color: #bbcceb;
+@ship-name-bg-color: #eeecd8;
+@trip-bg-color: transparent;
+@ship-border-color: #679acc;
+
+@head-we-bg-color: #428ac9;
+@ship-we-bg-color: #D2E4FC;
+@trip-we-bg-color: transparent;
+
+@other-trip-color: #e88e3b;
+@own-trip-color: #4fa5ec;
+@new-trip-color: #57b75c;
+@clash-trip-color: #e70000;
+
+
+/* Dimensions */
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1128px)";
+@desktop-xl:  ~"only screen and (min-width: 1129px)";
+
+
+/* Dimensions */
+@cell-count: 28;
+@cell-width: 9px;
+@day-cells-width: @cell-width * @cell-count; // 252
+@day-padding: 6px;
+@day-margin: 8px;
+@day-full-width: @day-cells-width + @day-padding * 2 + @day-margin * 2 + 2; // 280
+
+
+.vertical-center {
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-align: center;
+
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-align: center;
+
+  /* W3C */
+  display: box;
+  box-align: center;
+}
+
+
+.horizontal-center {
+  /* Internet Explorer 10 */
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+
+  /* W3C */
+  display: box;
+  box-pack: center;
+}
+
+
+/* Buttons */
+.tripDetail {
+  button.ctrl {
+    font-size: 17px;
+    padding: 6px 10px;
+    padding-bottom: 2px;
+  }
+  div.btn-group-time {
+    padding-right: 6px;
+  }
+  div.btn-group-dur {
+    padding-left: 6px;
+  }
+  button.btn-shortcut {
+    padding: 6px 0px;
+  }
+}
+
+
+/* Calendar Frame */
+div.caldr-frame {
+  border: 1px solid @caldr-frame-border-color;
+  border-radius: 4px;
+  padding: 4px 4px 8px;
+  overflow: hidden;
+}
+
+
+/* Calendar Day */
+div.caldr-day {
+
+  position: relative;
+  float: left;
+
+  background-color: @caldr-bg-color;
+  margin-left: @day-margin;
+  padding-left: @day-padding;
+  padding-right: @day-padding;
+  margin-right: @day-margin;
+
+  /* Active Date */
+  &.active {
+    background-color: @caldr-curr-bg-color;
+  }
+
+}
+
+
+/* Calendar Day Row */
+div.cdr {
+
+  position: relative;
+
+  font-size: 12px;
+
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+}
+
+
+/* Date Header */
+div.dh {
+
+  height: 34px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  text-align: center;
+
+  button.dh {
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+}
+
+
+/* Time Header */
+div.th {
+
+  height: 19px;
+
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+
+  background-color: transparent;
+  border-top: 1px solid @head-border-color;
+  border-bottom: 1px solid @head-border-color;
+
+  .thl, .thm, .thr {
+    position: relative;
+    float: left;
+    width: @cell-width * 4;
+  }
+
+  .thp {
+    position: relative;
+    float: left;
+    width: @cell-width * 2;
+  }
+
+}
+
+
+/* Ship */
+div.sh {
+
+  div.bg {
+
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid @head-border-color;
+
+    .bgl {
+      position: relative;
+      float: left;
+      height: 60px;
+      width: @cell-width * 2;
+    }
+
+    .bgm {
+      position: relative;
+      float: left;
+      height: 60px;
+      width: @cell-width * 6;
+      border-left: 1px solid @time-border-color;
+    }
+
+    .bgr {
+      position: relative;
+      float: left;
+      height: 60px;
+      width: @cell-width * 2;
+      border-left: 1px solid @time-border-color;
+    }
+
+  }
+
+}
+
+div.sn {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding-top: 2px;
+  padding-left: 2px;
+  height: 30px;
+  width: @cell-width * 28;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: fade(@ship-name-bg-color, 70%);
+
+  img.sn {
+    padding: 0px 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button.sn {
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-right: 6px;
+    padding-bottom: 0px;
+    font-size: 16px;
+  }
+
+  .ship {
+    padding-left: 2px;
+    font-weight: bold;
+  }
+
+}
+
+
+
+div.tp {
+  position: absolute;
+  left: @cell-width * 2;
+  right: @cell-width * 2;
+  top: 30px;
+  height: 30px;
+
+  .tp {
+    position: absolute;
+    top: 6px;
+    height: 18px;
+  }
+
+  .tpc {
+    position: absolute;
+    top: 4px;
+    height: 22px;
+  }
+
+  span.btl {
+    font-size: 11px;
+    height: 100%;
+    padding-left: 2px;
+    .vertical-center;
+  }
+
+  span.btr {
+    font-size: 11px;
+    height: 100%;
+    padding-right: 2px;
+    float: right;
+    .vertical-center;
+  }
+
+  .tpo {
+    background-color: fade(@other-trip-color, 70%);
+    border: 1px solid darken(@other-trip-color, 20%);
+  }
+
+  .tpm {
+    background-color: fade(@own-trip-color, 70%);
+    border: 1px solid darken(@own-trip-color, 20%);
+  }
+
+  .tpn {
+    background-color: fade(@new-trip-color, 50%);
+    border: 1px solid darken(@new-trip-color, 20%);
+  }
+
+  .tpx {
+    background-color: fade(@clash-trip-color, 50%);
+    border: 1px solid darken(@clash-trip-color, 20%);
+  }
+
+  .tps {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  .tpe {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+
+  .tpf0 {
+    left: @cell-width * 0;
+  }
+  .tpf1 {
+    left: @cell-width * 0;
+  }
+  .tpf2 {
+    left: @cell-width * 0;
+  }
+  .tpf3 {
+    left: @cell-width * 0;
+  }
+  .tpf4 {
+    left: @cell-width * 0;
+  }
+  .tpf5 {
+    left: @cell-width * 0;
+  }
+  .tpf6 {
+    left: @cell-width * 0;
+  }
+  .tpf7 {
+    left: @cell-width * 0;
+  }
+  .tpf8 {
+    left: @cell-width * 0;
+  }
+  .tpf9 {
+    left: @cell-width * 0;
+  }
+  .tpf10 {
+    left: @cell-width * 0;
+  }
+  .tpf11 {
+    left: @cell-width * 0;
+  }
+  .tpf12 {
+    left: @cell-width * 0;
+  }
+  .tpf13 {
+    left: @cell-width * 0;
+  }
+  .tpf14 {
+    left: @cell-width * 0;
+  }
+  .tpf15 {
+    left: @cell-width * 0;
+  }
+  .tpf16 {
+    left: @cell-width * 0;
+  }
+  .tpf17 {
+    left: @cell-width * 0;
+  }
+  .tpf18 {
+    left: @cell-width * 0;
+  }
+  .tpf19 {
+    left: @cell-width * 1;
+  }
+  .tpf20 {
+    left: @cell-width * 2;
+  }
+  .tpf21 {
+    left: @cell-width * 3;
+  }
+  .tpf22 {
+    left: @cell-width * 4;
+  }
+  .tpf23 {
+    left: @cell-width * 5;
+  }
+  .tpf24{
+    left: @cell-width * 6;
+  }
+  .tpf25 {
+    left: @cell-width * 7;
+  }
+  .tpf26 {
+    left: @cell-width * 8;
+  }
+  .tpf27 {
+    left: @cell-width * 9;
+  }
+  .tpf28 {
+    left: @cell-width * 10;
+  }
+  .tpf29 {
+    left: @cell-width * 11;
+  }
+  .tpf30 {
+    left: @cell-width * 12;
+  }
+  .tpf31 {
+    left: @cell-width * 13;
+  }
+  .tpf32 {
+    left: @cell-width * 14;
+  }
+  .tpf33 {
+    left: @cell-width * 15;
+  }
+  .tpf34 {
+    left: @cell-width * 16;
+  }
+  .tpf35 {
+    left: @cell-width * 17;
+  }
+  .tpf36 {
+    left: @cell-width * 18;
+  }
+  .tpf37 {
+    left: @cell-width * 19;
+  }
+  .tpf38 {
+    left: @cell-width * 20;
+  }
+  .tpf39 {
+    left: @cell-width * 21;
+  }
+  .tpf40 {
+    left: @cell-width * 22;
+  }
+  .tpf41 {
+    left: @cell-width * 23;
+  }
+  .tpf42 {
+    left: @cell-width * 24;
+  }
+  .tpf43 {
+    left: @cell-width * 24;
+  }
+  .tpf44 {
+    left: @cell-width * 24;
+  }
+  .tpf45 {
+    left: @cell-width * 24;
+  }
+  .tpf46 {
+    left: @cell-width * 24;
+  }
+  .tpf47 {
+    left: @cell-width * 24;
+  }
+
+  .tpt1 {
+    right: @cell-width * 24;
+  }
+  .tpt2 {
+    right: @cell-width * 24;
+  }
+  .tpt3 {
+    right: @cell-width * 24;
+  }
+  .tpt4 {
+    right: @cell-width * 24;
+  }
+  .tpt5 {
+    right: @cell-width * 24;
+  }
+  .tpt6 {
+    right: @cell-width * 24;
+  }
+  .tpt7 {
+    right: @cell-width * 24;
+  }
+  .tpt8 {
+    right: @cell-width * 24;
+  }
+  .tpt9 {
+    right: @cell-width * 24;
+  }
+  .tpt10 {
+    right: @cell-width * 24;
+  }
+  .tpt11 {
+    right: @cell-width * 24;
+  }
+  .tpt12 {
+    right: @cell-width * 24;
+  }
+  .tpt13 {
+    right: @cell-width * 24;
+  }
+  .tpt14 {
+    right: @cell-width * 24;
+  }
+  .tpt15 {
+    right: @cell-width * 24;
+  }
+  .tpt16 {
+    right: @cell-width * 24;
+  }
+  .tpt17 {
+    right: @cell-width * 24;
+  }
+  .tpt18 {
+    right: @cell-width * 24;
+  }
+  .tpt19 {
+    right: @cell-width * 23;
+  }
+  .tpt20 {
+    right: @cell-width * 22;
+  }
+  .tpt21 {
+    right: @cell-width * 21;
+  }
+  .tpt22 {
+    right: @cell-width * 20;
+  }
+  .tpt23 {
+    right: @cell-width * 19;
+  }
+  .tpt24{
+    right: @cell-width * 18;
+  }
+  .tpt25 {
+    right: @cell-width * 17;
+  }
+  .tpt26 {
+    right: @cell-width * 16;
+  }
+  .tpt27 {
+    right: @cell-width * 15;
+  }
+  .tpt28 {
+    right: @cell-width * 14;
+  }
+  .tpt29 {
+    right: @cell-width * 13;
+  }
+  .tpt30 {
+    right: @cell-width * 12;
+  }
+  .tpt31 {
+    right: @cell-width * 11;
+  }
+  .tpt32 {
+    right: @cell-width * 10;
+  }
+  .tpt33 {
+    right: @cell-width * 9;
+  }
+  .tpt34 {
+    right: @cell-width * 8;
+  }
+  .tpt35 {
+    right: @cell-width * 7;
+  }
+  .tpt36 {
+    right: @cell-width * 6;
+  }
+  .tpt37 {
+    right: @cell-width * 5;
+  }
+  .tpt38 {
+    right: @cell-width * 4;
+  }
+  .tpt39 {
+    right: @cell-width * 3;
+  }
+  .tpt40 {
+    right: @cell-width * 2;
+  }
+  .tpt41 {
+    right: @cell-width * 1;
+  }
+  .tpt42 {
+    right: @cell-width * 0;
+  }
+  .tpt43 {
+    right: @cell-width * 0;
+  }
+  .tpt44 {
+    right: @cell-width * 0;
+  }
+  .tpt45 {
+    right: @cell-width * 0;
+  }
+  .tpt46 {
+    right: @cell-width * 0;
+  }
+  .tpt47 {
+    right: @cell-width * 0;
+  }
+  .tpt48 {
+    right: @cell-width * 0;
+  }
+
+}

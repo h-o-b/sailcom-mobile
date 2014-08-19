@@ -1,0 +1,99 @@
+<div class="container tripDetail">
+
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+			<label for="ship" class="col-xs-3 control-label">Boot(e)</label>
+			<div class="col-xs-9">
+				<div class="input-group">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default ctrl" ng-click="selMyShips()" type="button"><span class="glyphicon glyphicon-heart"></span></button>
+		      </span>
+					<input type="text" class="form-control" id="ship" placeholder="Boot(e)" ng-model="trip.shipSelName" readonly>
+		      <span class="input-group-btn">
+		        <button class="btn btn-default ctrl" type="button" ng-click="lookupShip()"><span class="glyphicon glyphicon-chevron-right"></span></button>
+		      </span>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="shipCaldr" class="caldr-frame" ngx-controller="CaldrDayCtrl">
+				<div caldr class="caldr">
+					<div caldr-day day="item" class="caldr-day" ng-repeat="item in trip.getDateList()">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <p>&nbsp;</p>
+
+	<form class="form-horizontal" role="form">
+
+		<div class="form-group">
+			<div class="col-xs-6 btn-group-time">
+				<div class="btn-group btn-group-justified">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-shortcut" ng-click="setTimeFrom(18); setTimeTo(24);">VM</button>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-shortcut" ng-click="setTimeFrom(28); setTimeTo(34);">NM</button>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-shortcut" ng-click="setTimeFrom(36); setTimeTo(42);">A</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 btn-group-dur">
+				<div class="btn-group btn-group-justified">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-shortcut" ng-disabled="!trip.timeFrom" ng-click="setDuration(6)">3h</button>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-shortcut" ng-disabled="!trip.timeFrom" ng-click="setDuration(12)">6h</button>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-shortcut" ng-disabled="!trip.timeFrom" ng-click="setDuration(18)">9h</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-xs-6" style="padding-right: 6px;">
+				<div class="input-group">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default ctrl" ng-click="decTimeFrom(1); decTimeTo(1);" type="button" ng-disabled="!trip.vDuration"><span class="glyphicon glyphicon-minus"></span></button>
+		      </span>
+					<input type="text" class="form-control" placeholder="Start" ng-model="trip.timeFrom" ng-required readonly>
+		      <span class="input-group-btn">
+		        <button class="btn btn-default ctrl" ng-click="incTimeFrom(1);incTimeTo(1);" type="button" ng-disabled="!trip.vDuration"><span class="glyphicon glyphicon-plus"></span></button>
+		      </span>
+				</div>
+			</div>
+			<div class="col-xs-6" style="padding-left: 6px;">
+				<div class="input-group">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default ctrl" ng-click="decTimeTo(1)" type="button" ng-disabled="!trip.vDuration"><span class="glyphicon glyphicon-minus"></span></button>
+		      </span>
+					<input type="text" class="form-control" placeholder="Ende" ng-model="trip.timeTo" ng-required readonly>
+		      <span class="input-group-btn">
+	          <button class="btn btn-default ctrl" ng-click="incTimeTo(1)" type="button" ng-disabled="!trip.vDuration"><span class="glyphicon glyphicon-plus"></span></button>
+	        </span>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-xs-12">
+				<button type="button" ng-disabled="!trip.isValid()" class="btn btn-primary">Prüfen</button>
+				<button type="button" ng-disabled="!trip.vTimeFrom && !trip.vTimeTo" ng-click="trip.clearTimeRange()" class="btn btn-default">Löschen</button>
+			</div>
+		</div>
+
+	</form>
+
+</div>
+
