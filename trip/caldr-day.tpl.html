@@ -19,6 +19,6 @@
 	<div class="thr">21</div></th>
 </div>
 
-<div caldr-trip class="cdr sh" ship="item" day="day" ng-repeat="item in getShipList()">
+<div caldr-trip ship="ship" index="$index" day="day" ng-repeat="ship in getShipList() | orderBy : 'lakeName.concat(harborName)'">
 </div>
 

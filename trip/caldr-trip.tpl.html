@@ -1,30 +1,104 @@
 
-<div class="bg">
-	<div class="bgl">&nbsp;</div>
-	<div class="bgm">&nbsp;</div>
-	<div class="bgm">&nbsp;</div>
-	<div class="bgm">&nbsp;</div>
-	<div class="bgm">&nbsp;</div>
-	<div class="bgr">&nbsp;</div>
+<div class="cdr hb" ng-if="index === 0 || getShip(index).harborName != getShip(index - 1).harborName">
+
+  <div class="bg">
+    <div class="bgl">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgr">&nbsp;</div>
+  </div>
+
+  <div class="hn">
+    <span class="harbor">{{ship.harborName}}</span>
+    <br>
+    <span class="lake">{{ship.lakeName}}</span>
+  </div>
+
+  <!--div class="wt">
+    <div class="wtl">
+      <div class="pictoicon p07_day"></div>
+      <div>13°</div>
+      <div class="glyph winddir WSW"></div>
+      <div>1-16</div>
+      <div>1%</div>
+    </div>
+    <div class="wtm">
+      <div class="pictoicon p02_day"></div>
+      <div>13°</div>
+      <div class="glyph winddir WSW"></div>
+      <div>1-16</div>
+      <div>1%</div>
+    </div>
+    <div class="wtm">
+      <div class="pictoicon p02_day"></div>
+      <div>13°</div>
+      <div class="glyph winddir WSW"></div>
+      <div>1-16</div>
+      <div>1%</div>
+    </div>
+    <div class="wtm">
+      <div class="pictoicon p02_day"></div>
+      <div>13°</div>
+      <div class="glyph winddir WSW"></div>
+      <div>1-16</div>
+      <div>1%</div>
+    </div>
+    <div class="wtr">
+      <div class="pictoicon p02_day"></div>
+      <div>13°</div>
+      <div class="glyph winddir WSW"></div>
+      <div>1-16</div>
+      <div>1%</div>
+    </div>
+    <div class="wh">
+      <div>
+        <span class="glyph temperature"></span>
+      </div>
+      <div>
+        <span class="glyph winddir"></span>
+      </div>
+      <div>
+        <span class="glyph windspeed"></span>
+      </div>
+      <div>
+        <span class="glyph precipprob"></span>
+      </div>
+    </div>
+  </div-->
+
 </div>
 
-<div class="sn">
-	<span>
-		<img class="sn" ng-if="isLoading(ship.id)" src="assets/img/spinner.gif"/>
-		<button class="sn btn btn-default" ng-if="!isLoading(ship.id)" type="button" ng-click="selShip(ship.id)" class="btn btn-default">
-			<span ng-hide="getShipSel() == 'ship-sel-ship'" class="glyphicon glyphicon-unchecked"/>
-			<span ng-show="getShipSel() == 'ship-sel-ship'" class="glyphicon glyphicon-ok"/>
-		</button>
-	</span>
-	<span class="ship">{{ship.name}}</span>
-	<span class="harbor">({{ship.harborName}})</span>
-</div>
+<div class="cdr sh">
 
-<div class="tp">
-	<div class="tp tpf{{book.vTimeFrom}} tpt{{book.vTimeTo}}" ng-class="{ 'tpo' : book.isOther, 'tpm' : book.isMine, 'tps' : (book.vTimeFrom >= 18), 'tpe' : (book.vTimeTo <= 42) }" ng-repeat="book in getBookList()">
-		<span class="bt{{book.vTimeFrom > 30 ? 'r' : 'l'}}" ng-show="(book.vTimeTo - book.vTimeFrom) > 7">{{book.timeFrom}} - {{book.timeTo}}</span>
-	</div>
-	<div ng-if="hasCurrBook(day.tripDate)" class="tpc tpf{{currBookTimeFrom()}} tpt{{currBookTimeTo()}}" ng-class="{ 'tpx' : hasBookClash(day.tripDate, ship.id), 'tpn' : !hasBookClash(day.tripDate, ship.id), 'tps' : (currBookTimeFrom() >= 18), 'tpe' : (currBookTimeTo() <= 42) }">
-		<span class="bt{{currBookTimeFrom() > 30 ? 'r' : 'l'}}" ng-show="currBookDuration() > 7">{{currBookDurationText()}}</span>
-	</div>
+  <div class="bg">
+    <div class="bgl">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgm">&nbsp;</div>
+    <div class="bgr">&nbsp;</div>
+  </div>
+
+  <div class="sn">
+    <span>
+      <img class="sn" ng-if="isLoading(ship.id)" src="assets/img/spinner.gif"/>
+      <button class="sn btn btn-default" ng-if="!isLoading(ship.id)" type="button" ng-click="selShip(ship.id)" class="btn btn-default">
+        <span ng-hide="getShipSel() == 'ship-sel-ship'" class="glyphicon glyphicon-unchecked"/>
+        <span ng-show="getShipSel() == 'ship-sel-ship'" class="glyphicon glyphicon-ok"/>
+      </button>
+    </span>
+    <span class="ship">{{ship.name}}</span>
+  </div>
+
+  <div class="tp">
+    <div class="tp tpf{{book.vTimeFrom}} tpt{{book.vTimeTo}}" ng-class="{ 'tpo' : book.isOther, 'tpm' : book.isMine, 'tps' : (book.vTimeFrom >= 18), 'tpe' : (book.vTimeTo <= 42) }" ng-repeat="book in getBookList()">
+      <span class="bt{{book.vTimeFrom > 30 ? 'r' : 'l'}}" ng-show="(book.vTimeTo - book.vTimeFrom) > 7">{{book.timeFrom}} - {{book.timeTo}}</span>
+    </div>
+    <div ng-if="hasCurrBook(day.tripDate)" class="tpc tpf{{currBookTimeFrom()}} tpt{{currBookTimeTo()}}" ng-class="{ 'tpx' : hasBookClash(day.tripDate, ship.id), 'tpn' : !hasBookClash(day.tripDate, ship.id), 'tps' : (currBookTimeFrom() >= 18), 'tpe' : (currBookTimeTo() <= 42) }">
+      <span class="bt{{currBookTimeFrom() > 30 ? 'r' : 'l'}}" ng-show="currBookDuration() > 7">{{currBookDurationText()}}</span>
+    </div>
+  </div>
+
 </div>

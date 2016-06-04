@@ -3,270 +3,315 @@
 		"id": 46,
 		"name": "Oberägeri",
 		"isMine": false,
-		"lakeId": 1
+		"lakeId": 1,
+    "weather": "oberägeri"
 	},
 	{
 		"id": 13,
 		"name": "Biel",
 		"isMine": true,
-		"lakeId": 2
+		"lakeId": 2,
+    "weather": "biel"
 	},
 	{
 		"id": 52,
 		"name": "Biel-Vingelz",
 		"isMine": true,
-		"lakeId": 2
+		"lakeId": 2,
+    "weather": "biel"
 	},
 	{
 		"id": 14,
 		"name": "La Neuveville",
 		"isMine": false,
-		"lakeId": 2
+		"lakeId": 2,
+    "weather": "la-neuveville"
 	},
 	{
 		"id": 1,
 		"name": "Altenrhein",
 		"isMine": false,
-		"lakeId": 3
+		"lakeId": 3,
+    "weather": "altenrhein"
 	},
 	{
 		"id": 2,
 		"name": "Arbon",
 		"isMine": false,
-		"lakeId": 3
+		"lakeId": 3,
+    "weather": "arbon"
 	},
 	{
 		"id": 3,
 		"name": "Goldach",
 		"isMine": false,
-		"lakeId": 3
+		"lakeId": 3,
+    "weather": "goldach"
 	},
 	{
 		"id": 51,
 		"name": "Kreuzlingen",
 		"isMine": false,
-		"lakeId": 3
+		"lakeId": 3,
+    "weather": "kreuzlingen"
 	},
 	{
 		"id": 4,
 		"name": "Romanshorn",
 		"isMine": false,
-		"lakeId": 3
+		"lakeId": 3,
+    "weather": "romanshorn"
 	},
 	{
 		"id": 5,
 		"name": "Steckborn",
 		"isMine": false,
-		"lakeId": 3
+		"lakeId": 3,
+    "weather": "steckborn"
 	},
 	{
 		"id": 60,
 		"name": "Genf - Eaux-Vives",
 		"isMine": false,
-		"lakeId": 4
+		"lakeId": 4,
+    "weather": "genève"
 	},
 	{
 		"id": 21,
 		"name": "Versoix GE",
 		"isMine": false,
-		"lakeId": 4
+		"lakeId": 4,
+    "weather": "versoix"
 	},
 	{
 		"id": 22,
 		"name": "Vevey",
 		"isMine": false,
-		"lakeId": 4
+		"lakeId": 4,
+    "weather": "vevey"
 	},
 	{
 		"id": 8,
 		"name": "Fällanden",
 		"isMine": false,
-		"lakeId": 5
+		"lakeId": 5,
+    "weather": "fällanden"
 	},
 	{
 		"id": 62,
 		"name": "Beinwil",
 		"isMine": false,
-		"lakeId": 6
+		"lakeId": 6,
+    "weather": "beinwil"
 	},
 	{
 		"id": 57,
 		"name": "Circolo velico Lugano",
 		"isMine": false,
-		"lakeId": 7
+		"lakeId": 7,
+    "weather": "cassarate"
 	},
 	{
 		"id": 32,
 		"name": "Ronco TI",
 		"isMine": false,
-		"lakeId": 8
+		"lakeId": 8,
+    "weather": "ronco"
 	},
 	{
 		"id": 54,
 		"name": "Lungern",
 		"isMine": false,
-		"lakeId": 9
+		"lakeId": 9,
+    "weather": "lungern"
 	},
 	{
 		"id": 47,
 		"name": "Vallamand",
 		"isMine": false,
-		"lakeId": 10
+		"lakeId": 10,
+    "weather": "murten"
 	},
 	{
 		"id": 15,
 		"name": "Chevroux VD",
 		"isMine": false,
-		"lakeId": 11
+		"lakeId": 11,
+    "weather": "chevroux"
 	},
 	{
 		"id": 37,
 		"name": "Estavayer-le-lac",
 		"isMine": false,
-		"lakeId": 11
+		"lakeId": 11,
+    "weather": "estavayer-le-lac"
 	},
 	{
 		"id": 18,
 		"name": "Neuenburg",
 		"isMine": false,
-		"lakeId": 11
+		"lakeId": 11,
+    "weather": "neuenburg"
 	},
 	{
 		"id": 9,
 		"name": "Gross SZ",
 		"isMine": false,
-		"lakeId": 12
+		"lakeId": 12,
+    "weather": "sihlsee"
 	},
 	{
 		"id": 24,
 		"name": "Güetital-Faulensee",
 		"isMine": false,
-		"lakeId": 13
+		"lakeId": 13,
+    "weather": "faulensee"
 	},
 	{
 		"id": 26,
 		"name": "Hilterfingen-Hünibach",
 		"isMine": false,
-		"lakeId": 13
+		"lakeId": 13,
+    "weather": "hilterfingen"
 	},
 	{
 		"id": 63,
 		"name": "Spiez",
 		"isMine": false,
-		"lakeId": 13
+		"lakeId": 13,
+    "weather": "spiez"
 	},
 	{
 		"id": 55,
 		"name": "Thun - Lachenkanal",
 		"isMine": false,
-		"lakeId": 13
+		"lakeId": 13,
+    "weather": "thun"
 	},
 	{
 		"id": 25,
 		"name": "Thun-Gwatt",
 		"isMine": false,
-		"lakeId": 13
+		"lakeId": 13,
+    "weather": "gwatt"
 	},
 	{
 		"id": 50,
 		"name": "Brunnen - Föhnhafen",
 		"isMine": true,
-		"lakeId": 14
+		"lakeId": 14,
+    "weather": "brunnen"
 	},
 	{
 		"id": 27,
 		"name": "Gersau",
 		"isMine": false,
-		"lakeId": 14
+		"lakeId": 14,
+    "weather": "gersau"
 	},
 	{
 		"id": 28,
 		"name": "Küssnacht",
 		"isMine": false,
-		"lakeId": 14
+		"lakeId": 14,
+    "weather": "küssnacht"
 	},
 	{
 		"id": 29,
 		"name": "Luzern",
 		"isMine": false,
-		"lakeId": 14
+		"lakeId": 14,
+    "weather": "luzern"
 	},
 	{
 		"id": 6,
 		"name": "Mühlehorn GL",
 		"isMine": false,
-		"lakeId": 15
+		"lakeId": 15,
+    "weather": "mühlehorn"
 	},
 	{
 		"id": 7,
 		"name": "Unterterzen SG",
 		"isMine": false,
-		"lakeId": 15
+		"lakeId": 15,
+    "weather": "unterterzen"
 	},
 	{
 		"id": 44,
 		"name": "Arth",
 		"isMine": false,
-		"lakeId": 16
+		"lakeId": 16,
+    "weather": "arth"
 	},
 	{
 		"id": 31,
 		"name": "Zug",
 		"isMine": false,
-		"lakeId": 16
+		"lakeId": 16,
+    "weather": "zug"
 	},
 	{
 		"id": 10,
 		"name": "Jona SG",
 		"isMine": false,
-		"lakeId": 17
+		"lakeId": 17,
+    "weather": "jona"
 	},
 	{
 		"id": 11,
 		"name": "Schmerikon",
 		"isMine": false,
-		"lakeId": 17
+		"lakeId": 17,
+    "weather": "schmerikon"
 	},
 	{
 		"id": 35,
 		"name": "Schmerikon - Gem.hafen",
 		"isMine": false,
-		"lakeId": 17
+		"lakeId": 17,
+    "weather": "schmerikon"
 	},
 	{
 		"id": 36,
 		"name": "Erlenbach",
 		"isMine": false,
-		"lakeId": 18
+		"lakeId": 18,
+    "weather": "erlenbach"
 	},
 	{
 		"id": 61,
 		"name": "Herrliberg",
 		"isMine": false,
-		"lakeId": 18
+		"lakeId": 18,
+    "weather": "herrliberg"
 	},
 	{
 		"id": 53,
 		"name": "Horgen",
 		"isMine": false,
-		"lakeId": 18
+		"lakeId": 18,
+    "weather": "horgen"
 	},
 	{
 		"id": 58,
 		"name": "Pfäffikon SZ",
 		"isMine": false,
-		"lakeId": 18
+		"lakeId": 18,
+    "weather": "pfäffikon-3505"
 	},
 	{
 		"id": 34,
 		"name": "Wädenswil",
 		"isMine": false,
-		"lakeId": 18
+		"lakeId": 18,
+    "weather": "wädenswil"
 	},
 	{
 		"id": 12,
 		"name": "Zürich",
 		"isMine": false,
-		"lakeId": 18
+		"lakeId": 18,
+    "weather": "zürich"
 	}
 ]

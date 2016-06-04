@@ -28,6 +28,7 @@ trip.directive("caldrTrip", ["TripEditService", "ShipSelService", "SHIP_SEL", "B
   return {
     scope: {
       ship: "=",
+      index: "=",
       day: "="
     },
     templateUrl: "trip/caldr-trip.tpl.html",
@@ -37,12 +38,12 @@ trip.directive("caldrTrip", ["TripEditService", "ShipSelService", "SHIP_SEL", "B
         return BookListService.isLoading(shipId);
       };
 
-      scope.getShipSel = function () {
-        return TripEditService.getShipSel();
+      scope.getShip = function (i) {
+        return TripEditService.getShipList()[i];
       };
 
-      scope.getShipList = function () {
-        return TripEditService.getShipList();
+      scope.getShipSel = function () {
+        return TripEditService.getShipSel();
       };
 
       scope.selShip = function (shipId) {

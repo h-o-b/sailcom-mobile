@@ -32,6 +32,9 @@ devApp.service("TestData", ["$http", function ($http) {
   $http.get("data/trips112.json").then(function (data) {
     that.trips[112] = data.data;
   });
+  $http.get("data/trips120.json").then(function (data) {
+    that.trips[120] = data.data;
+  });
   $http.get("data/trips143.json").then(function (data) {
     that.trips[143] = data.data;
   });
@@ -107,6 +110,11 @@ devApp.run(["$httpBackend", "TestData", function ($httpBackend, TestData) {
   /* Trips of Ship 112 */
   $httpBackend.whenGET(/^\/sailcom-proxy\/bookings\?shipId=112&nofWeeks=/).respond(function (method, url, data) {
     return [200, TestData.trips[112], {}];
+  });
+
+  /* Trips of Ship 120 */
+  $httpBackend.whenGET(/^\/sailcom-proxy\/bookings\?shipId=120&nofWeeks=/).respond(function (method, url, data) {
+    return [200, TestData.trips[120], {}];
   });
 
   /* Trips of Ship 143 */

@@ -46,20 +46,24 @@
 }
 /* Calendar Frame */
 div.caldr-frame {
+  background-color: #ffffff;
   border: 1px solid #d3d3d3;
   border-radius: 4px;
   padding: 4px 4px 8px;
   overflow: hidden;
 }
+/* Calendar */
+div.caldr {
+  max-height: 200px;
+}
 /* Calendar Day */
 div.caldr-day {
   position: relative;
   float: left;
-  background-color: transparent;
-  margin-left: 8px;
+  margin-left: 30px;
   padding-left: 6px;
   padding-right: 6px;
-  margin-right: 8px;
+  margin-right: 10px;
   /* Active Date */
 }
 div.caldr-day.active {
@@ -93,7 +97,6 @@ div.th {
   white-space: nowrap;
   background-color: transparent;
   border-top: 1px solid #2c5dab;
-  border-bottom: 1px solid #2c5dab;
 }
 div.th .thl,
 div.th .thm,
@@ -107,31 +110,128 @@ div.th .thp {
   float: left;
   width: 18px;
 }
-/* Ship */
-div.sh div.bg {
+/* Time Background */
+div.bg {
   position: relative;
-  height: 60px;
-  border-bottom: 1px solid #2c5dab;
 }
-div.sh div.bg .bgl {
+div.bg .bgl {
   position: relative;
   float: left;
-  height: 60px;
+  height: 100%;
   width: 18px;
 }
-div.sh div.bg .bgm {
+div.bg .bgm {
   position: relative;
   float: left;
-  height: 60px;
+  height: 100%;
   width: 54px;
   border-left: 1px solid #bbcceb;
 }
-div.sh div.bg .bgr {
+div.bg .bgr {
   position: relative;
   float: left;
-  height: 60px;
+  height: 100%;
   width: 18px;
   border-left: 1px solid #bbcceb;
+}
+/* Harbor */
+div.hb .bg {
+  height: 60px;
+}
+div.hn {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding-top: 2px;
+  padding-left: 2px;
+  height: 38px;
+  width: 252px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-top: 1px solid #2c5dab;
+  background-color: rgba(238, 236, 216, 0.9);
+  border-bottom: 1px solid #2c5dab;
+}
+div.hn .harbor {
+  font-weight: bold;
+}
+/* Weather */
+div.wt {
+  position: absolute;
+  left: 0;
+  top: 38px;
+  height: 120px;
+  background-color: rgba(238, 236, 216, 0.6);
+  /* Header */
+}
+div.wt .wh {
+  position: absolute;
+  left: -28px;
+  top: 34px;
+  font-size: 14px;
+}
+div.wt .wtl {
+  position: relative;
+  float: left;
+  height: 32px;
+  width: 36px;
+  margin-right: 9px;
+}
+div.wt .wtm {
+  position: relative;
+  float: left;
+  height: 32px;
+  width: 36px;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+div.wt .wtr {
+  position: relative;
+  float: left;
+  height: 32px;
+  width: 36px;
+  margin-left: 9px;
+}
+div.wt .wtl div,
+div.wt .wtm div,
+div.wt .wtr div {
+  margin-top: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+div.wt .pictoicon[class*="_day"] {
+  background-color: rgba(112, 177, 226, 0.7);
+}
+div.wt .pictoicon[class*="_night"] {
+  background-color: rgba(6, 40, 69, 0.7);
+}
+div.wt .pictoicon {
+  position: relative;
+  width: 36px;
+  line-height: 32px;
+  height: 100%;
+  background-size: 100% 100%;
+}
+div.wt .pictoicon.p02_day {
+  background-image: url("img/07_day.svg");
+}
+div.wt .pictoicon.p07_day {
+  background-image: url("img/07_day.svg");
+}
+div.wt .pictoicon.p12_day {
+  background-image: url("img/07_day.svg");
+}
+div.wt .pictoicon.p19_day {
+  background-image: url("img/07_day.svg");
+}
+div.wt .pictoicon.p26_day {
+  background-image: url("img/07_day.svg");
+}
+/* Ship */
+div.sh .bg {
+  height: 60px;
 }
 div.sn {
   position: absolute;
@@ -144,7 +244,9 @@ div.sn {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: rgba(238, 236, 216, 0.7);
+  border-top: 1px solid rgba(44, 93, 171, 0.3);
+  background-color: rgba(222, 239, 255, 0.7);
+  border-bottom: 1px solid rgba(44, 93, 171, 0.3);
 }
 div.sn img.sn {
   padding: 0px 3px;
@@ -162,6 +264,7 @@ div.sn .ship {
   padding-left: 2px;
   font-weight: bold;
 }
+/* Trip */
 div.tp {
   position: absolute;
   left: 18px;

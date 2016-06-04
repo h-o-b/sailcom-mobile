@@ -39,8 +39,8 @@ session.factory("AuthService", ["$http", "$location", "SessionService", "ShipSer
   authService.login = function (userInfo) {
     return $http
       //.get("/sailcom-proxy/login?user=" + userInfo.userId + "&pwd=" + userInfo.pwd)
-      .get("/sailcom-proxy/login?user=82219&pwd=segeln")
-      //.get("/sailcom-proxy/login?user=test&pwd=test")
+      //.get("/sailcom-proxy/login?user=82219&pwd=segeln")
+      .get("/sailcom-proxy/login?user=test&pwd=test")
       .then(function (rsp) {
         SessionService.create(rsp.data.sessionId, rsp.data.user);
       }, function (rsp) {

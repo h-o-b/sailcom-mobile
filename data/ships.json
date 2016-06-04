@@ -30,7 +30,7 @@
 	{
 		"id": 120,
 		"name": "Moser m1 \u0027Breeze do Brasil\u0027",
-		"isMine": false,
+		"isMine": true,
 		"harborId": 13,
 		"lakeId": 2,
 		"hasImg": true,

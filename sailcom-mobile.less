@@ -13,6 +13,117 @@
 }
 
 
+@font-face{
+  font-family: 'meteoblue';
+  src: url('weather/meteoblue_pictofont.woff') format('woff'),
+       url('weather/meteoblue_pictofont.ttf') format('truetype');
+  font-weight: normal;
+  font-style:normal
+}
+
+
+.glyph:after,.glyph:before {
+  font-family: meteoblue;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  position: relative;
+  vertical-align: text-bottom;
+  text-decoration: none
+}
+
+.glyph:after:hover,.glyph:before:hover {
+  text-decoration: none
+}
+
+.glyph.time:before{content:"\00e0e0"}
+.glyph.temperature:before{content:"\00e010"}
+.glyph.windchill:before{content:"\00e011"}
+.glyph.winddir:before{content:"\00e012"}
+.glyph.windspeed:before{content:"\00e013"}
+.glyph.windgust:before{content:"\00e014"}
+.glyph.humidity:before{content:"\00e015"}
+.glyph.rain:before{content:"\00e016"}
+.glyph.rain1h:before{content:"\00e017"}
+.glyph.rain3h:before{content:"\00e018"}
+.glyph.precipprob:before{content:"\00e019"}
+.glyph.watertemp:before{content:"\00e01a"}
+.glyph.waveheight:before{content:"\00e01b"}
+.glyph.waveperiod:before{content:"\00e01c"}
+.glyph.wavepeak:before{content:"\00e01d"}
+.glyph.pressure:before{content:"\00e01e"}
+.glyph.predictability:before{content:"\00e020"}
+.glyph.snow:before{content:"\00e025"}
+.glyph.featcl_1:before{content:"\00e030"}
+.glyph.featcl_2:before{content:"\00e031"}
+.glyph.featcl_3:before{content:"\00e032"}
+.glyph.featcl_4:before{content:"\00e033"}
+.glyph.featcl_5:before{content:"\00e034"}
+.glyph.featcl_6:before{content:"\00e035"}
+.glyph.featcl_7:before{content:"\00e036"}
+.glyph.featcl_8:before{content:"\00e037"}
+.glyph.featcl_9:before{content:"\00e038"}
+.glyph.featcl_10:before{content:"\00e039"}
+.glyph.featcl_11:before{content:"\00e03a"}
+.glyph.featcl_12:before{content:"\00e03b"}
+.glyph.featcl_13:before{content:"\00e03c"}
+.glyph.settings:before{content:"\00e04b"}
+.glyph.search:before{content:"\00e071"}
+.glyph.menu:before{content:"\00e040"}
+.glyph.options:before{content:"\00e04b"}
+.glyph.delete:before{content:"\00e06c"}
+.glyph.close:before{content:"\00e06d"}
+.glyph.edit:before{content:"\00e070"}
+.glyph.help:before{content:"\00e080"}
+.glyph.download:before{content:"\00e082"}
+.glyph.bookmark:before{content:"\00e085"}
+.glyph.document:before{content:"\00e086"}
+.glyph.more:before{content:"\00e087"}
+.glyph.share:before{content:"\00e088"}
+.glyph.params:before{content:"\00e089"}
+.glyph.warning:before{content:"\00e08d"}
+.glyph.info:before{content:"\00e08e"}
+.glyph.facebook:before{content:"\00e0b2";color:#39579a}
+.glyph.twitter:before{content:"\00e0b4";color:#00abf0}
+.glyph.googleplus:before{content:"\00e0b6";color:#df4a32}
+.glyph.user:before{content:"\00e0b9"}
+.glyph.like:before{content:"\00e0bb"}
+.glyph.dislike:before{content:"\00e0bc"}
+.glyph.credits:before{content:"\00e090"}
+.glyph.meteoblue:before{content:"\00e0d0"}
+.glyph.logo:before{content:"\00e0d1"}
+.glyph.external:before{content:"\00e08f"}
+.glyph.location:before{content:"\00e0df"}
+.glyph.arrowhead_hollow_down:before{content:"\00e048"}
+.glyph.arrowhead_hollow_up:before{content:"\00e047"}
+.glyph.arrowhead_hollow_left:before{content:"\00e049"}
+.glyph.arrowhead_hollow_right:before{content:"\00e04a"}
+.glyph.forward:before{content:"\00e063"}
+.glyph.backward:before{content:"\00e064";margin-right:-0.5em}
+.glyph.fast_forward:before{content:"\00e065"}
+.glyph.fast_backward:before{content:"\00e066"}
+.glyph.play:before{content:"\00e060"}
+.glyph.pause:before{content:"\00e061"}
+
+.winddir.N:before{content:"\00e008"}
+.winddir.NNE:before{content:"\00e009"}
+.winddir.NE:before{content:"\00e00a"}
+.winddir.ENE:before{content:"\00e00b"}
+.winddir.E:before{content:"\00e00c"}
+.winddir.ESE:before{content:"\00e00d"}
+.winddir.SE:before{content:"\00e00e"}
+.winddir.SSE:before{content:"\00e00f"}
+.winddir.S:before{content:"\00e000"}
+.winddir.SSW:before{content:"\00e001"}
+.winddir.SW:before{content:"\00e002"}
+.winddir.WSW:before{content:"\00e003"}
+.winddir.W:before{content:"\00e004"}
+.winddir.WNW:before{content:"\00e005"}
+.winddir.NW:before{content:"\00e006"}
+.winddir.NNW:before{content:"\00e007"}
+
+
 body {
   background-color: @body-bg-color;
   padding-top: 70px;
