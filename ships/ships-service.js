@@ -20,6 +20,8 @@ ships.service("ShipService", ["$http", "$q", function ($http, $q) {
     this.allShipList = [];
     this.myShipList = [];
     this.shipMap = {};
+    this.userInfo = {};
+    this.userPref = {};
   };
 
   this.create = function () {
@@ -104,6 +106,16 @@ ships.service("ShipService", ["$http", "$q", function ($http, $q) {
         .get("/sailcom-proxy/ships")
         .then(function (rsp) {
           that.allShipList = rsp.data;
+        }),
+      $http
+        .get("/sailcom-proxy/user/info")
+        .then(function (rsp) {
+          that.userInfo = rsp.data;
+        }),
+      $http
+        .get("/sailcom-proxy/user/pref")
+        .then(function (rsp) {
+          that.userPref = rsp.data;
         })
     ])
       .then(function () {
@@ -117,10 +129,15 @@ ships.service("ShipService", ["$http", "$q", function ($http, $q) {
           lake = that.allLakeList[i];
           lake.harbors = [];
           lake.ships = [];
+          lake.isAvailable = false;
+          lake.isFavorite = false;
           that.lakeMap[lake.id] = lake;
-          if (lake.isMine) {
-            that.myLakeList.push(lake);
-          }
+        }
+
+        for (i = 0; i < that.userInfo.availableLakes.length; i++) {
+          var lake = that.getLake(that.userInfo.availableLakes[i]);
+          lake.isAvailable = true;
+          that.myLakeList.push(lake);
         }
 
         for (i = 0; i < harborCnt; i++) {
@@ -128,11 +145,16 @@ ships.service("ShipService", ["$http", "$q", function ($http, $q) {
           lake = that.getLake(harbor.lakeId);
           harbor.ships = [];
           harbor.lakeName = lake.name;
+          harbor.isAvailable = false;
+          harbor.isFavorite = false;
           that.harborMap[harbor.id] = harbor;
           lake.harbors.push(harbor);
-          if (harbor.isMine) {
-            that.myHarborList.push(harbor);
-          }
+        }
+
+        for (i = 0; i < that.userInfo.availableHarbors.length; i++) {
+          var harbor = that.getHarbor(that.userInfo.availableHarbors[i]);
+          harbor.isAvailable = true;
+          that.myHarborList.push(harbor);
         }
 
         for (i = 0; i < shipCnt; i++) {
@@ -141,14 +163,24 @@ ships.service("ShipService", ["$http", "$q", function ($http, $q) {
           harbor = that.getHarbor(ship.harborId);
           ship.lakeName = that.getLake(ship.lakeId).name;
           ship.harborName = that.getHarbor(ship.harborId).name;
+          ship.isAvailable = false;
+          ship.isFavorite = false;
+          ship.starCount = null;
           that.shipMap[ship.id] = ship;
           harbor.ships.push(ship);
           lake.ships.push(ship);
-          if (ship.isMine) {
-            that.myShipList.push(ship);
-          }
         }
 
+        for (i = 0; i < that.userInfo.availableShips.length; i++) {
+          var ship = that.getShip(that.userInfo.availableShips[i]);
+          ship.isAvailable = true;
+          that.myShipList.push(ship);
+        }
+        for (i = 0; i < that.userPref.favoriteShips.length; i++) {
+          that.getShip(that.userPref.favoriteShips[i]).isFavorite = true;
+        }
+
+        console.log("Repository:\n" + JSON.stringify(that, null, 2));
       });
   };
 
@@ -239,7 +271,7 @@ ships.service("ShipSelService", ["ShipService", "SHIP_SEL", function (ShipServic
         return true;
       }
       if (shipSel === SHIP_SEL.ship) {
-        return ShipService.getShip(selId).isMine;
+        return ShipService.getShip(selId).isAvailable;
       }
     }
     if (shipSel === SHIP_SEL.ship) {

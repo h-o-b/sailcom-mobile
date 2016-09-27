@@ -166,7 +166,7 @@
             <div>
               <table class="table table-striped table-hover table-condensed">
                 <tbody>
-                <tr ng-repeat="ship in ships.getAllShips() | filter:listInfo.searchText" ng-class="{success: ship.isMine}">
+                <tr ng-repeat="ship in ships.getAllShips() | filter:listInfo.searchText" ng-class="{success: ship.isAvailable}">
                   <td ng-if="isLookup"><button type="button" class="btn btn-default btn-xs" ng-click="selShip(ship.id)"><span class="glyphicon glyphicon-{{selIcon(SHIP_SEL.ship, ship.id)}}"/></button></td>
                   <td><b>{{ship.name}}</b><br>{{ship.lakeName}}<br>{{ship.harborName}}</td>
                   <td><img ng-if="ship.hasImg" ng-click="showShip(ship)" ng-src="http://www.sailcomnet.ch/fotos/thumbs/{{ship.id}}.jpg" width="95"/></td>

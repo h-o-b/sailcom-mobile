@@ -83,7 +83,7 @@ devApp.run(["$httpBackend", "TestData", function ($httpBackend, TestData) {
   $httpBackend.whenGET(/^data\/.+\.json/).passThrough();
 
   /* Test Login */
-  $httpBackend.whenGET("/sailcom-proxy/login?user=test&pwd=test").respond(function (method, url, data) {
+  $httpBackend.whenGET("/sailcom-proxy/session/login?user=test&pwd=test").respond(function (method, url, data) {
     return [200, TestData.sessionInfo, {}];
   });
 
