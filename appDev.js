@@ -3,7 +3,7 @@
 
 var devApp = angular.module("devApp", ["app", "ngMockE2E"]);
 
-devApp.service("TestData", ["$http", function ($http) {
+devApp.service("TestData", ["$http", "SessionService", function ($http, SessionService) {
 
   var that = this;
 
@@ -54,9 +54,9 @@ devApp.config(["$provide", function ($provide) {
     var proxy = function (method, url, data, callback, headers) {
       var interceptor = function () {
         var _this = this, _arguments = arguments;
-        if (url.match(/.tpl.html$/) != null || url.match(/^data\/.+\.json/) != null || url.indexOf("/sailcom-proxy/login") == 0) {
+        if (url.match(/.tpl.html$/) != null || url.match(/^data\/.+\.json/) != null || url.indexOf(SessionService.API_BASE_URL + "/login") == 0) {
           callback.apply(this, arguments);
-        } else if (url == "/sailcom-proxy/lakes" || url == "/sailcom-proxy/harbors" || url == "/sailcom-proxy/ships" || url == "/sailcom-proxy/trips") {
+        } else if (url == SessionService.API_BASE_URL + "/lakes" || url == SessionService.API_BASE_URL + "/harbors" || url == SessionService.API_BASE_URL + "/ships" || url == SessionService.API_BASE_URL + "/trips") {
           callback.apply(this, arguments);
         } else {
           setTimeout(function () {
@@ -83,47 +83,47 @@ devApp.run(["$httpBackend", "TestData", function ($httpBackend, TestData) {
   $httpBackend.whenGET(/^data\/.+\.json/).passThrough();
 
   /* Test Login */
-  $httpBackend.whenGET("/sailcom-proxy/session/login?user=test&pwd=test").respond(function (method, url, data) {
+  $httpBackend.whenGET(SessionService.API_BASE_URL + "/session/login?user=test&pwd=test").respond(function (method, url, data) {
     return [200, TestData.sessionInfo, {}];
   });
 
   /* Lakes */
-  $httpBackend.whenGET("/sailcom-proxy/lakes").respond(function (method, url, data) {
+  $httpBackend.whenGET(SessionService.API_BASE_URL + "/lakes").respond(function (method, url, data) {
     return [200, TestData.lakes, {}];
   });
 
   /* Harbors */
-  $httpBackend.whenGET("/sailcom-proxy/harbors").respond(function (method, url, data) {
+  $httpBackend.whenGET(SessionService.API_BASE_URL + "/harbors").respond(function (method, url, data) {
     return [200, TestData.harbors, {}];
   });
 
   /* Ships */
-  $httpBackend.whenGET("/sailcom-proxy/ships").respond(function (method, url, data) {
+  $httpBackend.whenGET(SessionService.API_BASE_URL + "/ships").respond(function (method, url, data) {
     return [200, TestData.ships, {}];
   });
 
   /* Trips */
-  $httpBackend.whenGET("/sailcom-proxy/trips").respond(function (method, url, data) {
+  $httpBackend.whenGET(SessionService.API_BASE_URL + "/trips").respond(function (method, url, data) {
     return [200, TestData.myTrips, {}];
   });
 
   /* Trips of Ship 112 */
-  $httpBackend.whenGET(/^\/sailcom-proxy\/bookings\?shipId=112&nofWeeks=/).respond(function (method, url, data) {
+  $httpBackend.whenGET(/\/bookings\?shipId=112&nofWeeks=/).respond(function (method, url, data) {
     return [200, TestData.trips[112], {}];
   });
 
   /* Trips of Ship 120 */
-  $httpBackend.whenGET(/^\/sailcom-proxy\/bookings\?shipId=120&nofWeeks=/).respond(function (method, url, data) {
+  $httpBackend.whenGET(/\/bookings\?shipId=120&nofWeeks=/).respond(function (method, url, data) {
     return [200, TestData.trips[120], {}];
   });
 
   /* Trips of Ship 143 */
-  $httpBackend.whenGET(/^\/sailcom-proxy\/bookings\?shipId=143&nofWeeks=/).respond(function (method, url, data) {
+  $httpBackend.whenGET(/\/bookings\?shipId=143&nofWeeks=/).respond(function (method, url, data) {
     return [200, TestData.trips[143], {}];
   });
 
   /* Trips of Ship 161 */
-  $httpBackend.whenGET(/^\/sailcom-proxy\/bookings\?shipId=161&nofWeeks=/).respond(function (method, url, data) {
+  $httpBackend.whenGET(/\/bookings\?shipId=161&nofWeeks=/).respond(function (method, url, data) {
     return [200, TestData.trips[161], {}];
   });
 

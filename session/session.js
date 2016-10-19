@@ -20,6 +20,7 @@ session.constant("USER_ROLES", {
 
 
 session.service("SessionService", function () {
+  this.API_BASE_URL = "/sailcom-proxy";
   this.create = function (sessionId, user) {
     this.sessionId = sessionId;
     this.user = user;
@@ -38,9 +39,9 @@ session.factory("AuthService", ["$http", "$location", "SessionService", "ShipSer
 
   authService.login = function (userInfo) {
     return $http
-      .get("/sailcom-proxy/session/login?user=" + userInfo.userId + "&pwd=" + userInfo.pwd)
-      //.get("/sailcom-proxy/login?user=82219&pwd=segeln")
-      //.get("/sailcom-proxy/session/login?user=test&pwd=test")
+      .get(SessionService.API_BASE_URL + "/session/login?user=" + userInfo.userId + "&pwd=" + userInfo.pwd)
+      //.get(SessionService.API_BASE_URL + "/login?user=82219&pwd=segeln")
+      //.get(SessionService.API_BASE_URL + "/session/login?user=test&pwd=test")
       .then(function (rsp) {
         SessionService.create(rsp.data.sessionId, rsp.data.user);
       }, function (rsp) {
@@ -51,7 +52,7 @@ session.factory("AuthService", ["$http", "$location", "SessionService", "ShipSer
 
   authService.logout = function () {
     return $http
-      .get("/sailcom-proxy/session/logout")
+      .get(SessionService.API_BASE_URL + "/session/logout")
       .then(function (rsp) {
         SessionService.destroy();
         ShipService.destroy();

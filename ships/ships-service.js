@@ -1,7 +1,7 @@
 /*globals angular, ships */
 "use strict";
 
-ships.service("ShipService", ["$http", "$q", function ($http, $q) {
+ships.service("ShipService", ["$http", "$q", "SessionService", function ($http, $q, SessionService) {
 
   this.allLakeList = null;
   this.myLakeList = null;
@@ -93,27 +93,27 @@ ships.service("ShipService", ["$http", "$q", function ($http, $q) {
     var that = this;
     return $q.all([
       $http
-        .get("/sailcom-proxy/lakes")
+        .get(SessionService.API_BASE_URL + "/lakes")
         .then(function (rsp) {
           that.allLakeList = rsp.data;
         }),
       $http
-        .get("/sailcom-proxy/harbors")
+        .get(SessionService.API_BASE_URL + "/harbors")
         .then(function (rsp) {
           that.allHarborList = rsp.data;
         }),
       $http
-        .get("/sailcom-proxy/ships")
+        .get(SessionService.API_BASE_URL + "/ships")
         .then(function (rsp) {
           that.allShipList = rsp.data;
         }),
       $http
-        .get("/sailcom-proxy/user/info")
+        .get(SessionService.API_BASE_URL + "/user/info")
         .then(function (rsp) {
           that.userInfo = rsp.data;
         }),
       $http
-        .get("/sailcom-proxy/user/pref")
+        .get(SessionService.API_BASE_URL + "/userPref")
         .then(function (rsp) {
           that.userPref = rsp.data;
         })
@@ -180,7 +180,7 @@ ships.service("ShipService", ["$http", "$q", function ($http, $q) {
           that.getShip(that.userPref.favoriteShips[i]).isFavorite = true;
         }
 
-        console.log("Repository:\n" + JSON.stringify(that, null, 2));
+        // console.log("Repository:\n" + JSON.stringify(that, null, 2));
       });
   };
 

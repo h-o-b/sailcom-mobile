@@ -1,7 +1,7 @@
 /*globals angular, trips*/
 "use strict";
 
-trips.service("TripService", ["$http", "$q", "$rootScope", "ShipService", function ($http, $q, $rootScope, ShipService) {
+trips.service("TripService", ["$http", "$q", "$rootScope", "SessionService", "ShipService", function ($http, $q, $rootScope, SessionService, ShipService) {
 
   this.myTripList = null;
   this.tripMap = null;
@@ -27,7 +27,7 @@ trips.service("TripService", ["$http", "$q", "$rootScope", "ShipService", functi
   this.getData = function () {
     var that = this;
     return $http
-      .get("/sailcom-proxy/trips")
+      .get(SessionService.API_BASE_URL + "/trips")
       .then(function (rsp) {
         that.myTripList = rsp.data;
         var tripCnt = that.myTripList.length, i, trip, ship;

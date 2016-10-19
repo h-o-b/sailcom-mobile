@@ -1,7 +1,7 @@
 /*globals $, angular, trip*/
 "use strict";
 
-trip.service("BookListService", ["$http", "$filter", function ($http, $filter) {
+trip.service("BookListService", ["$http", "$filter", "SessionService", function ($http, $filter, SessionService) {
 
   /* Current Booking */
   this.currBookDate = null;
@@ -99,7 +99,7 @@ trip.service("BookListService", ["$http", "$filter", function ($http, $filter) {
   this.loadShipBookings = function (shipId, weekCount, firstDay, lastDay) {
     var that = this;
     $http
-      .get("/sailcom-proxy/bookings?shipId=" + shipId + "&nofWeeks=" + weekCount)
+      .get(SessionService.API_BASE_URL + "/bookings?shipId=" + shipId + "&nofWeeks=" + weekCount)
       .then(function (rsp) {
         var i, book, parts;
         for (i = 0; i < rsp.data.length; i++) {
